@@ -1,0 +1,33 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Force-Enable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == '' And ('$(PlatformToolset)' != 'v140' Or '$(ApplicationType)' != '' Or ('$(Platform)' != 'Win32' And '$(Platform)' != 'x86'))">
+    <Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86>true</Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Force-Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' != ''">
+    <Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86>true</Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == ''">
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Debug\zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Release\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'MinSizeRel'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\MinSizeRel\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'RelWithDebInfo'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\RelWithDebInfo\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug' And '$(Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Debug\zlibd.dll" />
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Debug\zlibd.pdb" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Release' And '$(Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\Release\zlib.dll" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'MinSizeRel' And '$(Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\MinSizeRel\zlib.dll" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'RelWithDebInfo' And '$(Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn-x86)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\RelWithDebInfo\zlib.dll" />
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\dyn\rt-dyn\Win32\RelWithDebInfo\zlib.pdb" />
+  </ItemGroup>
+</Project>

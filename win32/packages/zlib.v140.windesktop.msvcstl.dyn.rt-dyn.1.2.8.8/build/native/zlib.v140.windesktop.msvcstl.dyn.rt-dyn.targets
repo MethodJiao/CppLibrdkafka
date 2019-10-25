@@ -1,0 +1,4 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Condition="'$(Force-Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn)' == ''" Project="$(MSBuildThisFileDirectory)\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.x64.targets" />
+  <Import Condition="'$(Force-Disable-zlib-v140-windesktop-msvcstl-dyn-rt-dyn)' == ''" Project="$(MSBuildThisFileDirectory)\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.x86.targets" />
+</Project>
